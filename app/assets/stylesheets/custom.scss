@@ -57,7 +57,6 @@ p {
   line-height: 1.7em;
 }
 
-
 /* header */
 .logo {
   float: left;
@@ -132,16 +131,11 @@ aside {
       margin-bottom: 3px;
       margin-top: 0px;
     }
+    img {
+      float: left;
+      margin-right: 10px;
+    }
   }
-}
-
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
-.gravatar_edit {
-  margin-top: 15px;
 }
 
 .stats {
@@ -194,7 +188,7 @@ input {
   height: auto !important;
 }
 
-.error_explanation {
+#error_explanation {
   color: red;
   ul {
     color: red;
@@ -233,6 +227,3 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
-
-
-

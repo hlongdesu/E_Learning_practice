@@ -48,4 +48,17 @@ en:
   url:
     author: https://www.facebook.com/tranhoang.long.2711
   footer_html: "© 2019 Copyright: %{author_href}"
-  sign_up: "Sign Up"
+  title: "E-Learning"
+  signup: "Sign up now!"
+  greeting: "Welcome to ELS"
+  log_in: "Log in"
+  not_found_error: "Not Found"
+  create_account: "Create my account"
+  name: "Name"
+  password: "Password"
+  email: "Email"
+  confirmation: "Confirmation"
+  error_html: "This form contains %{error_count}."
+  error:
+    one: "%{count} error"
+    other: "%{count} errors"
