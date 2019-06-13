@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   def show; end
 
   def create
-    @user = User.new user_params
+    @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = t "greeting"
       redirect_to @user
     else
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
 
   def load_user
     return @user if @user = User.find_by(id: params[:id])
-    flash.now[:danger] = t "user_not_found"
+    flash.now[:danger] = t "errors.user_not_found"
     redirect_to root_path
   end
 end
