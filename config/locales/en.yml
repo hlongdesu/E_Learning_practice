@@ -30,5 +30,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  title: "E-Learning"
+  main_title: "Framgia ELS"
+  static_pages:
+    home:
+      title: "Home"
+      para1_html: "Are you ready to join us?"
+      welcome: "Framgia E-Learning Service"
+    about:
+      title: "About"
+      about_html: "What is Framgia Elearning Service?"
+      about1_html: "Learning new language is always difficult. This application help you learn words of several languages. You can study using this service anywhere and anytime!"
+      about2_html: "If you have friends to share your study progress, you can motivate each other. You can follow users who are using this elearning service and you can check their activities on the dashboard."
+      about3_html: "Of course if you want to create new lessons, you can! To create new lessons, you need to send admin request to us and become admin. Contact information is below."
+      lean_words: "Lean Words"
+      share: "Share Activities With Users"
+      create_lesson: "Create Lessons"
+  url:
+    author: https://www.facebook.com/tranhoang.long.2711
+  footer_html: "© 2019 Copyright: %{author_href}"
+  sign_up: "Sign Up"
