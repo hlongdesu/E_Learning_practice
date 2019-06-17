@@ -3,6 +3,7 @@ class User < ApplicationRecord
   before_save{email.downcase!}
 
   has_many :lessons
+  has_many :categories, through: :lessons
   has_many :activities
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy

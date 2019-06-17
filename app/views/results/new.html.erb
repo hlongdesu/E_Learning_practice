@@ -1,0 +1,32 @@
+<% provide :title, t("lesson_word") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-center">
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-sm-9">
+                    <h1><%= @lesson.category.name %></h1>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <h3 class="text-muted"><span class="text-warning"><%= @progress %></span> of <%= @lesson.category.words.count %></h3>
+                </div>
+            </div>
+
+            <div class="card card-answer p-3">
+                <h2 class="text-warning text-center"><%= @word.name %></h2>
+
+                <div class="answers">
+                    <% @word.answers.each do |answer| %>
+                        <div class="mt-3">
+                                <%= form_for [@lesson, @answer] do |f|%>
+                                    <%= f.hidden_field :word_id, value: @word.id %>
+                                    <%= f.hidden_field :answer_id, value: answer.id %>
+                                    <%= f.submit answer.content, class: 'btn btn-outline-secondary btn-block' %><br>
+                                <%end%>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

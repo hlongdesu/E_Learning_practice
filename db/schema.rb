@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_06_17_021957) do
     t.string "name"
     t.bigint "category_id"
     t.bigint "user_id"
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_lessons_on_category_id"

@@ -76,6 +76,9 @@ en:
   word: "Word"
   your_answer: "Your Answer"
   correct_answer: "Correct Answer"
+  of: "/"
+  lesson: "Lesson"
+  lesson_word: "Lesson word"
   form:
     create_account: "Create Account"
     name: "Name"

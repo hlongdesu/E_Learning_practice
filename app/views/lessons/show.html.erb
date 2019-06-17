@@ -1,0 +1,40 @@
+<% provide :title, t("lesson") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-center">
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col-sm-6">
+          <h1><%= @lesson.category.name %></h1>
+        </div>
+        <div class="col-sm-6 text-right">
+          <h3 class="text-muted"><%= t "result" %><span class="text-warning"><%= @lesson.correct_answers.count %></span><%= t "of" %><%= @lesson.results.count %></h3>
+        </div>
+      </div>
+      <div class="row">
+        <table class="table results">
+          <tr>
+            <th><%= t "word" %></th>
+            <th><%= t "your_answer" %></th>
+            <th><%= t "correct_answer" %></th>
+            <th></th>
+          </tr>
+          <% @results.each do |result| %>
+            <tr>
+              <td><%= result.word.name %></td>
+              <td><%= result.answer.content %></td>
+              <td><%= result.word.correct_answer %></td>
+              <td class="text-center">
+                <% if result.answer.is_correct? %>
+                  <i class="fa fa-check text-success"></i>
+                <% else %>
+                  <i class="fa fa-times text-danger"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

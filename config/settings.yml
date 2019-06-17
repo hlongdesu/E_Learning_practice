@@ -3,4 +3,5 @@ email_length: 250
 password_min_length: 6
 avatar_size: 80
 checked: "1"
+notchecked: "0"
 

@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     resources :results
   end
   resources :words
-
   resources :users do
     member do
       get :following, :followers

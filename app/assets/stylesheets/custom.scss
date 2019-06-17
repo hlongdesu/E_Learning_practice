@@ -3,7 +3,7 @@
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
-$green: #33cc33;
+$green-a: #5cb85c;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -238,5 +238,31 @@ input {
     padding: 8px 20px;
     margin-left: 20px;
     margin-bottom: 10px;
+  }
+}
+
+.card-answer {
+  margin-left: 100px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 7.5px 7.5px 7.5px 7.5px rgba(0, 0, 0, 0.1);
+  padding:  16px !important;
+  .btn {
+    &:hover {
+      background-color: $green-a;
+    }
+  }
+}
+
+.nav-item {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  background-color: $green-a;
+  margin-bottom: 25px;
+  margin-right: 5px;
+  margin-top: 10px;
+  a {
+    color: white;
   }
 }
