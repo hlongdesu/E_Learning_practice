@@ -30,3 +30,19 @@ followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
+15.times do
+  name = Faker::Name.title
+  cate = Category.create! name: name
+
+  8.times do
+    word = Category.all.sample.words.build name: Faker::Lorem.word
+    word.answers = [
+      Answer.new(content: Faker::Lorem.word, is_correct: true),
+      Answer.new(content: Faker::Lorem.word, is_correct: false),
+      Answer.new(content: Faker::Lorem.word, is_correct: false),
+      Answer.new(content: Faker::Lorem.word, is_correct: false)
+    ].shuffle
+    word.save!
+  end
+end
+

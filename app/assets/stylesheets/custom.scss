@@ -3,6 +3,7 @@
 
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea;
+$green: #33cc33;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -214,5 +215,28 @@ input {
     overflow: auto;
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.card-category {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 5px;
+  box-shadow: 0 7.5px 1px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  .card-title {
+    margin: 10px 20px 2px;
+    font-weight: 300;
+    font-size: 25px;
+  }
+  .card-text {
+    margin: 10px 20px 5px;
+  }
+  .card-body {
+    padding: 2px;
+  }
+  .btn {
+    padding: 8px 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
   }
 }

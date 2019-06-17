@@ -68,6 +68,14 @@ en:
   followers: "Followers"
   follow: "Follow"
   unfollow: "Unfollow"
+  category_list: "Category List"
+  show_result: "Show result"
+  result: "Result: "
+  learn: "Learn"
+  nothing: "Nothing to show"
+  word: "Word"
+  your_answer: "Your Answer"
+  correct_answer: "Correct Answer"
   form:
     create_account: "Create Account"
     name: "Name"
@@ -77,6 +85,7 @@ en:
     remember_me: "Remember me on this computer"
     edit: "Edit user"
     save_changes: "Save changes"
+    submit: "Submit"
   errors:
     invalid_user: "Invalid User"
     user_not_found: "Not Found"
@@ -86,3 +95,4 @@ en:
     error:
       one: "%{count} error"
       other: "%{count} errors"
+    login_required: "Please login"

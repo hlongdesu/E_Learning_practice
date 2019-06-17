@@ -6,6 +6,15 @@ class ApplicationController < ActionController::Base
     return if logged_in?
     store_location
     flash[:danger] = t "errors.please_login"
+  end
+
+  private
+
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "errors.login required"
     redirect_to login_path
   end
 end
+

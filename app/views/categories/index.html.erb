@@ -1,0 +1,33 @@
+<% provide :title, t("category_list") %>
+<br><br>
+<div class = "row">
+  <div class = "col">
+    <h3>Categories (<%= @categories.count%>)</h3>
+  </div>
+</div>
+<br>
+<% if @categories.any? %>
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-md-6">
+        <article class="card card-category p-2 h-100">
+          <div class="card-body">
+            <h5 class="card-title"><%= category.name %> </h5>
+            <p class="card-text">
+              <strong>[<%= category.words.count %> words]</strong>
+            </p>
+            <%= link_to t("learn"), "#", class: "btn btn-success btn-md" %>
+          </div>
+        </article>
+        <br><br>
+      </div>
+    <%end%>
+    <%= will_paginate %>
+  </div>
+<% else %>
+  <div class="alert alert-danger">
+    <h1><%= t "nothing" %></h1>
+  </div>
+<% end %>
+
+
