@@ -35,7 +35,7 @@ followers.each { |follower| follower.follow(user) }
   cate = Category.create! name: name
 
   8.times do
-    word = Category.all.sample.words.build name: Faker::Lorem.word
+    word = Category.all.sample.words.build name: Faker::Lorem.word, def: Faker::Lorem.sentence
     word.answers = [
       Answer.new(content: Faker::Lorem.word, is_correct: true),
       Answer.new(content: Faker::Lorem.word, is_correct: false),

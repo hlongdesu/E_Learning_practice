@@ -8,6 +8,7 @@
         <% if logged_in? %>
           <li><%= link_to t("users"), users_path %></li>
           <li><%= link_to t("category"), categories_path %></li>
+          <li><%= link_to t("word_list"), words_path %></li>
           <li class="dropdown">
             <%= link_to t("account"), "#", "data-toggle": "dropdown", class: "dropdown-toggle" %>
             <ul class="dropdown-menu">

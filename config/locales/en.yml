@@ -79,6 +79,10 @@ en:
   of: "/"
   lesson: "Lesson"
   lesson_word: "Lesson word"
+  word_list: "Word List"
+  learned:
+    one: "You learned %{count} word"
+    other: "You learned %{count} words"
   form:
     create_account: "Create Account"
     name: "Name"

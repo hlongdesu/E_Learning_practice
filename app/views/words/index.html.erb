@@ -1,0 +1,44 @@
+<ul class="nav nav-pills nav-warning float-right justify-content-end">
+    <li class="nav-item">
+        <%= link_to 'Learned', words_path(learned: 1) %>
+    </li>
+    <li class="nav-item">
+        <%= link_to 'Not learned', words_path(learned: 0) %>
+    </li>
+</ul>
+<table class="table table table-hover table-responsive">
+  <caption>
+    <h3>
+      <%= t "learned", count: current_user.learned_words %>
+    </h3>
+  </caption>
+          <tr>
+            <th><%= t "index" %></th>
+            <th><%= t "word" %></th>
+            <th>
+              <span class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  Category
+                <span class="caret"></span>
+                </a>
+              <ul class="dropdown-menu">
+                <% Category.all.each do |category| %>
+                  <li>
+                  <%= link_to category.name, words_path(category_id: category.id) %>
+                  </li>
+                <% end %>
+              </ul>
+              </span>
+            </th>
+            <th><%= t "definition" %></th>
+          </tr>
+          <% @words.each.with_index(@words.offset + 1) do |word, index| %>
+            <tr>
+              <td><%= index %></td>
+              <td><%= word.name %></td>
+              <td><%= word.category.name %></td>
+              <td><%= word.def %></td>
+            </tr>
+          <% end %>
+</table>
+<%= will_paginate %>

@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :lessons
   has_many :categories, through: :lessons
+  has_many :words, through: :lessons
   has_many :activities
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy
@@ -59,5 +60,8 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
+
+  def learned_words
+    self.words.count
   end
 end
