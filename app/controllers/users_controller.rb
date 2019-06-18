@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(new show create)
   before_action :load_user, except: %i(new index create)
   before_action :correct_user, only: %i(edit update)
+  before_action :admin_user, only: :destroy
 
   def index
     @users = User.paginate page: params[:page],
@@ -40,6 +41,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      flash[:success] = t "user_deleted"
+      redirect_to users_url
+    else
+      flash[:danger] = t "errors.user"
+      redirect_to root_path
+    end
+  end
+
   def following
     @title = t "following"
     @users = @user.following.paginate page: params[:page]
@@ -54,6 +65,13 @@ class UsersController < ApplicationController
 
   private
 
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "errors.please_login"
+    redirect_to login_path
+  end
+
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :avatar
@@ -61,6 +79,10 @@ class UsersController < ApplicationController
 
   def correct_user
     redirect_to root_path unless current_user? @user
+  end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
   end
 
   def load_user

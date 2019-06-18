@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :password, presence: true,
             length: {minimum: Settings.password_min_length}
   has_secure_password
-  enum role: {member: 0, admin: 1}
+  enum role: {user: 0, admin: 1}
   mount_uploader :avatar, AvatarUploader
 
   def self.digest string
