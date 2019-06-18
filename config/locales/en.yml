@@ -64,6 +64,10 @@ en:
   sure?: " You sure?"
   update_profile: "Update your profile"
   user_deleted: "User deleted"
+  following: "Following"
+  followers: "Followers"
+  follow: "Follow"
+  unfollow: "Unfollow"
   form:
     create_account: "Create Account"
     name: "Name"

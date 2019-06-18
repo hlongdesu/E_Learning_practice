@@ -40,18 +40,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @title = t "following"
+    @users = @user.following.paginate page: params[:page]
+    render :show_follow
+  end
+
+  def followers
+    @title = t "followers"
+    @users = @user.followers.paginate page: params[:page]
+    render :show_follow
+  end
+
   private
 
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :avatar
-  end
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "errors.please_login"
-    redirect_to login_path
   end
 
   def correct_user
