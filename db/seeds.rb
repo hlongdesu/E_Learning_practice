@@ -22,7 +22,6 @@ User.create!(name: "admin",
                password_confirmation: password)
 end
 
-# Following relationships
 users = User.all
 user  = users.first
 following = users[2..50]

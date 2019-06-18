@@ -50,6 +50,10 @@ class User < ApplicationRecord
     update_attribute :remember_digest, nil
   end
 
+  def learned_words
+    words.count
+  end
+
   def follow other_user
     following << other_user
   end
@@ -60,8 +64,5 @@ class User < ApplicationRecord
 
   def following? other_user
     following.include? other_user
-
-  def learned_words
-    self.words.count
   end
 end

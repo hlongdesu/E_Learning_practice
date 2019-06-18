@@ -2,4 +2,9 @@
   <small>
     <%= t "footer_html", author_href: link_to(t("author"), t("url.author")) %>
   </small>
+  <nav>
+    <ul>
+      <li><%= link_to t("static_pages.about.title"), about_path %></li>
+    </ul>
+  </nav>
 </footer>

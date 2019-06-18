@@ -93,6 +93,7 @@ en:
     edit: "Edit user"
     save_changes: "Save changes"
     submit: "Submit"
+    edit: "Edit user"
   errors:
     invalid_user: "Invalid User"
     user_not_found: "Not Found"
